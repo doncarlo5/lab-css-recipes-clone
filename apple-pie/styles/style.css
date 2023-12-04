@@ -5,11 +5,22 @@ html {
   font-size: 16px;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
   margin: 0;
   padding: 0;
   font-weight: lighter;
@@ -20,5 +31,85 @@ body {
   font-family: "Helvetica", sans-serif;
 }
 
+header {
+  position: relative;
+  text-align: center;
+}
+
+header img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+header h1 {
+  color: white;
+  font-size: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+main {
+  max-width: 80%;
+  margin: 0 auto;
+  line-height: 20px;
+  letter-spacing: 0.01rem;
+  text-wrap: balance;
+}
+
+section h3 {
+  margin-top: 40px;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.introduction img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  max-width: 400px;
+}
+
+.ingredients img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  max-width: 320px;
+}
+
+h2 {
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+.ingredients ul {
+  margin-top: 20px;
+  font-size: 16px;
+  padding-left: 25px;
+  list-style: "-";
+}
+
+.directions ol {
+  margin-top: 20px;
+  font-size: 16px;
+  padding-left: 25px;
+}
+
 /* STYLES */
 /* Write your CSS below */
+
+.directions ol {
+  list-style: none;
+}
+
+ol > li {
+  /* 2. Create a custom list counter */
+  counter-increment: listcounter;
+}
+ol > li::before {
+  /*3. Set the new style for the list markers */
+  content: counter(listcounter) ")";
+}
